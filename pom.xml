@@ -25,8 +25,8 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>quarkus-omnifaces-parent</artifactId>
-    <name>Quarkus - OmniFaces</name>
+    <artifactId>quarkus-adminfaces-parent</artifactId>
+    <name>Quarkus - AdminFaces</name>
     <packaging>pom</packaging>
 
     <properties>

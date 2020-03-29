@@ -1,4 +1,4 @@
-= Quarkus OmniFaces extension
+= Quarkus AdminFaces extension
 :page-layout: base
 :source-language: java
 :icons: font
@@ -14,59 +14,39 @@
 :caution-caption: :fire:
 :warning-caption: :warning:
 
-image:https://travis-ci.org/rmpestano/quarkus-omnifaces.svg[Build Status (Travis CI), link=https://travis-ci.org/rmpestano/quarkus-omnifaces]
+image:https://travis-ci.org/rmpestano/quarkus-omnifaces.svg[Build Status (Travis CI), link=https://travis-ci.org/adminfaces/quarkus-adminfaces]
 
-Enables OmniFaces in Quarkus applications
+Enables AdminFaces, OmniFaces and PrimeFaces Extensions in Quarkus applications
 
  
-== How to try it?
+This projects is based on https://github.com/rmpestano/quarkus-omnifaces[OmniFaces Extension^] and adds AdminFaces and PrimeFaces Extension support in native mode
 
-This project depends on `MyFaces` and https://github.com/apache/myfaces/tree/master/extensions/quarkus[`Quarkus MyFaces` extension^].
 
-=== Install quarkus omnifaces extension
+== Usage
 
-On the root of this project run:
+Add the extension in your quarkus project:
 
-`mvn clean install -DskipTests`
-
-[TIP]
-====
-
-To build the quarkus extension you need to add jboss maven repository to your maven settings.xml:
-
-----
-<repositories>
-    <repository>
-        <id>jboss</id>
-        <name>jboss repo</name>
-        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-    </repository>
-</repositories>
-<pluginRepositories>
-    <pluginRepository>
-        <id>jboss</id>
-        <name>jboss repo</name>
-        <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
-   </pluginRepository>
-</pluginRepositories>
-----
-
-====
-
-=== Run sample application
+```
+<dependency>
+    <groupId>io.quarkus</groupId>
+    <artifactId>quarkus-adminfaces</artifactId>
+    <version>${quarkus.version}</version>
+</dependency>
+```
+== Run sample application
 
 * `cd system-tests && mvn compile quarkus:dev`
-* access http://localhost:8080/index.xhtml
+* access http://localhost:8080/
 
-TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-omnifaces-st-runner.jar`
+TIP: Run via quarkus runner with `mvn clean package && java -jar target/quarkus-adminfaces-st-runner.jar`
 
-=== Native mode
+== Native mode
 
 To run o quarkus native use:
 
-`mvn clean package -Pnative && ./target/quarkus-omnifaces-st-runner`
+`mvn clean package -Pnative && ./target/quarkus-adminfaces-st-runner`
 
-=== Run System tests
+== Run System tests
 
 `mvn clean test`
 
@@ -75,7 +55,7 @@ To run o quarkus native use:
 `mvn verify -Pnative`
 
 
-=== Other examples
+== Other examples
 
 https://github.com/adminfaces/quarkus-admin-starter[Quarkus admin starter^] and https://github.com/adminfaces/quarkus-admin-showcase[Quarkus admin showcase^] are more elaborated applications using quarkus-omnifaces and quarkus myfaces extension. Follow the instructions on readme in order to run them.
 

@@ -1,0 +1,8 @@
+com/github/adminfaces/quarkus/extension/deployment/OmniFacesProcessor.class
+com/github/adminfaces/quarkus/extension/deployment/AdminFacesProcessor.class
+com/github/adminfaces/quarkus/extension/deployment/AdminFacesProcessor$$accessor.class
+com/github/adminfaces/quarkus/extension/deployment/PrimeFacesExtensionProcessor$$accessor.class
+META-INF/quarkus-javadoc.properties
+com/github/adminfaces/quarkus/extension/deployment/PrimeFacesExtensionProcessor.class
+com/github/adminfaces/quarkus/extension/deployment/OmniFacesProcessor$$accessor.class
+META-INF/quarkus-build-steps.list

@@ -19,15 +19,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>quarkus-omnifaces-parent</artifactId>
+        <artifactId>quarkus-adminfaces-parent</artifactId>
         <groupId>io.quarkus</groupId>
         <version>1.3.1.Final</version>
         <relativePath>../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>quarkus-omnifaces-deployment</artifactId>
-    <name>Quarkus - OmniFaces - Deployment</name>
+    <artifactId>quarkus-adminfaces-deployment</artifactId>
+    <name>Quarkus - AdminFaces - Deployment</name>
 
     <dependencies>
         <dependency>
@@ -48,7 +48,7 @@
         </dependency>
         <dependency>
             <groupId>io.quarkus</groupId>
-            <artifactId>quarkus-omnifaces</artifactId>
+            <artifactId>quarkus-adminfaces</artifactId>
             <version>${project.version}</version>
         </dependency>
         <!-- test dependencies -->

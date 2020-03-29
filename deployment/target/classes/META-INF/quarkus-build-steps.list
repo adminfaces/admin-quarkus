@@ -1,0 +1,3 @@
+com.github.adminfaces.quarkus.extension.deployment.AdminFacesProcessor
+com.github.adminfaces.quarkus.extension.deployment.OmniFacesProcessor
+com.github.adminfaces.quarkus.extension.deployment.PrimeFacesExtensionProcessor

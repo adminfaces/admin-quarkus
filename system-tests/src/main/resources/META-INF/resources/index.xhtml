@@ -1,39 +1,47 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui"
-      xmlns:o="http://omnifaces.org/ui">
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:p="http://primefaces.org/ui"
+                xmlns:o="http://omnifaces.org/ui"
+                template="#{layoutMB.template}">
 
-<h:head>
-    <title>Welcome to Quarkus OmniFaces extension!</title>
-</h:head>
+    <ui:define name="metadata">
+        <ui:param name="renderBreadCrumb" value="false"/>
+        <f:metadata>
+            <f:viewParam name="id" value="#{viewScopeBean.id}" converter="javax.faces.Integer"/>
+            <f:viewAction action="#{viewScopeBean.viewAction}"/>
+            <f:event type="preRenderView" listener="#{viewScopeBean.preRenderView}"/>
+        </f:metadata>
+    </ui:define>
 
-<f:metadata>
-    <f:viewParam name="id" value="#{viewScopeBean.id}" converter="javax.faces.Integer" />
-    <f:viewAction action="#{viewScopeBean.viewAction}" />
-    <f:event type="preRenderView" listener="#{viewScopeBean.preRenderView}"/>
-</f:metadata>
+    <ui:define name="title">
+        Welcome to AdminFaces Quarkus application!
+    </ui:define>
 
-<h:body>
+    <ui:define name="body">
+        <h:form id="form" prependId="false">
+            <p:panel styleClass="box-primary card">
+                <o:messages showDetail="false"/>
+                <p:panelGrid id="inputs" columns="4" columnClasses="ui-grid-col-2,ui-grid-col-4,ui-grid-col-2,ui-grid-col-4"
+                             layout="grid" styleClass="ui-fluid card">
+                    <p:outputLabel value="Id:" for="id"/>
+                    <h:inputText required="true" value="#{viewScopeBean.sampleBean.id}" id="id"/>
+                    <p:outputLabel value="Name:" for="name"/>
+                    <h:inputText required="true" value="#{viewScopeBean.sampleBean.name}" id="name"/>
+                    <p:outputLabel value="ViewAction:" for="viewAction"/>
+                    <h:outputText id="viewAction" value="#{viewScopeBean.viewAction}"/>
+                    <p:outputLabel value="preRenderView:" for="preRenderView"/>
+                    <h:outputText id="preRenderView" value="#{viewScopeBean.preRenderView}"/>
+                    <p:outputLabel value="projectStage:" for="projectStage"/>
+                    <h:outputText id="projectStage" value="#{viewScopeBean.projectStage}"/>
+                </p:panelGrid>
+                <p:commandButton id="btn-save" ajax="true" update="@form" value="Save" styleClass="btn-primary" action="#{viewScopeBean.save}"/>
+            </p:panel>
+        </h:form>
+    </ui:define>
 
-    <h:form id="form" prependId="false">
-        <o:messages showDetail="false"/>
-        <h:panelGrid columns="2" id="inputs">
-            <h:outputLabel value="Id:" for="id"/>
-            <h:inputText required="true" value="#{viewScopeBean.sampleBean.id}" id="id" />
-            <h:outputLabel value="Name:" for="name"/>
-            <h:inputText required="true" value="#{viewScopeBean.sampleBean.name}" id="name" />
-            <h:outputLabel value="ViewAction:" for="viewAction"/>
-            <h:outputText id="viewAction" value="#{viewScopeBean.viewAction}"/>
-            <h:outputLabel value="preRenderView:" for="preRenderView"/>
-            <h:outputText id="preRenderView" value="#{viewScopeBean.preRenderView}"/>
-            <h:outputLabel value="projectStage:" for="projectStage"/>
-            <h:outputText id="projectStage" value="#{viewScopeBean.projectStage}"/>
-        </h:panelGrid>
-        <p:commandButton id="btn-save" ajax="true" update="@form" value="Save" action="#{viewScopeBean.save}"/>
-    </h:form>
-</h:body>
+</ui:composition>
 
-</html>
 
